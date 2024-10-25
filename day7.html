@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventskalender - Türchen 7</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-color: #1a4a5e;
+            background-image: 
+                radial-gradient(white 1px, transparent 1px),
+                radial-gradient(white 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes snowfall-1 {
+            0% { transform: translateY(-10vh) translateX(-20vw); }
+            100% { transform: translateY(110vh) translateX(20vw); }
+        }
+        
+        @keyframes snowfall-2 {
+            0% { transform: translateY(-10vh) translateX(20vw); }
+            100% { transform: translateY(110vh) translateX(-20vw); }
+        }
+        
+        @keyframes snowfall-3 {
+            0% { transform: translateY(-10vh) translateX(0); }
+            100% { transform: translateY(110vh) translateX(10vw); }
+        }
+
+        @keyframes snowfall-4 {
+            0% { transform: translateY(-10vh) translateX(10vw); }
+            100% { transform: translateY(110vh) translateX(-10vw); }
+        }
+
+        .snowflake {
+            position: fixed;
+            color: white;
+            font-size: 1.5em;
+            user-select: none;
+            z-index: 1;
+            top: -20px;
+        }
+
+        .snowflake:nth-child(4n) {
+            animation: snowfall-1 6s linear infinite;
+            font-size: 1.8em;
+        }
+
+        .snowflake:nth-child(4n+1) {
+            animation: snowfall-2 8s linear infinite;
+            font-size: 1.2em;
+        }
+
+        .snowflake:nth-child(4n+2) {
+            animation: snowfall-3 7s linear infinite;
+            font-size: 1.5em;
+        }
+
+        .snowflake:nth-child(4n+3) {
+            animation: snowfall-4 9s linear infinite;
+            font-size: 1.3em;
+        }
+
+        .container {
+            background: #ffe4e1; /* Pastelliger Rosa-Ton */
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 90%;
+            width: 600px;
+            text-align: center;
+            margin: 20px;
+            position: relative;
+            z-index: 2;
+            border: 2px solid #e74c3c;
+        }
+
+        h1 {
+            color: #c0392b;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .surprise-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 3px solid #e74c3c;
+        }
+
+        .message {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #fff5f5;
+            border-radius: 10px;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            border: 1px solid #e74c3c;
+        }
+
+        .tree {
+            position: fixed;
+            font-size: 3rem;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Viele weitere Weihnachtsbäume mit verschiedenen Positionen */
+        .tree:nth-child(1) { top: 5%; left: 5%; }
+        .tree:nth-child(2) { top: 25%; left: 12%; }
+        .tree:nth-child(3) { top: 45%; left: 7%; }
+        .tree:nth-child(4) { top: 65%; left: 15%; }
+        .tree:nth-child(5) { top: 85%; left: 10%; }
+        .tree:nth-child(6) { top: 10%; right: 8%; }
+        .tree:nth-child(7) { top: 30%; right: 15%; }
+        .tree:nth-child(8) { top: 50%; right: 5%; }
+        .tree:nth-child(9) { top: 70%; right: 12%; }
+        .tree:nth-child(10) { top: 90%; right: 7%; }
+        .tree:nth-child(11) { top: 15%; left: 25%; }
+        .tree:nth-child(12) { top: 35%; right: 25%; }
+        .tree:nth-child(13) { top: 75%; left: 30%; }
+        .tree:nth-child(14) { top: 20%; right: 30%; }
+        .tree:nth-child(15) { top: 60%; right: 28%; }
+        .tree:nth-child(16) { top: 40%; left: 28%; }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Viele Weihnachtsbäume -->
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+    <div class="tree">🎄</div>
+
+    <!-- Noch mehr Schneeflocken -->
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+    <div class="snowflake">❅</div><div class="snowflake">❆</div><div class="snowflake">❄</div>
+
+    <div class="container">
+        <h1>🎁 Türchen 7 🎁</h1>
+        <div class="image-container">
+            <img class="surprise-image" src="../day7.jpg" alt="Türchen 7">
+        </div>
+        <div class="message">
+            <p>Gutschein für zusammen backen - glutenfreie Mischungen sind leider shitty :)</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Daily Surprise</title>
+    <title>Your Daily Christmas Surprise</title>
     <style>
         body {
             margin: 0;
@@ -14,24 +14,62 @@
             align-items: center;
             justify-content: center;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-color: #0f3443;
+            background-image: 
+                radial-gradient(white 1px, transparent 1px),
+                radial-gradient(white 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Fallende Schneeflocken Animation */
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-10vh) translateX(0);
+            }
+            100% {
+                transform: translateY(110vh) translateX(20vw);
+            }
+        }
+
+        .snowflake {
+            position: fixed;
+            color: white;
+            font-size: 1.5em;
+            user-select: none;
+            z-index: 1;
+            animation: snowfall 5s linear infinite;
+        }
+
+        .snowflake:nth-child(2n) {
+            animation-duration: 6s;
+        }
+
+        .snowflake:nth-child(3n) {
+            animation-duration: 7s;
         }
 
         .container {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 2rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             max-width: 90%;
             width: 600px;
             text-align: center;
             margin: 20px;
+            position: relative;
+            z-index: 2;
+            border: 2px solid #e74c3c;
         }
 
         h1 {
-            color: #2c3e50;
+            color: #c0392b;
             margin-bottom: 1.5rem;
             font-size: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         .image-container {
@@ -45,6 +83,7 @@
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 3px solid #e74c3c;
         }
 
         .message {
@@ -55,6 +94,24 @@
             color: #2c3e50;
             font-size: 1.1rem;
             line-height: 1.5;
+            border: 1px solid #e74c3c;
+        }
+
+        /* Weihnachtliche Dekoration */
+        .container::before,
+        .container::after {
+            content: "🎄";
+            position: absolute;
+            top: -20px;
+            font-size: 2rem;
+        }
+
+        .container::before {
+            left: 20px;
+        }
+
+        .container::after {
+            right: 20px;
         }
 
         @media (max-width: 600px) {
@@ -70,14 +127,25 @@
     </style>
 </head>
 <body>
+    <!-- Schneeflocken -->
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+
     <div class="container">
-        <h1>Türchen 1</h1>
+        <h1>🎁 Deine Überraschung für heute 🎁</h1>
         <div class="image-container">
-            <!-- Ersetze die URL mit deiner Bild-URL -->
+            <!-- Ersetze dies mit dem Pfad zu deinem lokalen Bild -->
             <img class="surprise-image" src="https://www.messmer.de/media/3f/5a/ea/1691071884/106468_FS_ZimtPflaume_20er.png" alt="Überraschung des Tages">
         </div>
         <div class="message">
-            <!-- Hier kannst du deine tägliche Nachricht einfügen -->
             <p>Hier ist deine besondere Überraschung für heute! ❤️</p>
         </div>
     </div>
